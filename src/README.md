@@ -12,4 +12,6 @@
 
 * [数组方法](./js/array)
     * [reduce](./js/array/reduce.md)
+* [dom操作](js/dom)
+    * [图片预览](./js/dom/图片预览.html)
 </details>
