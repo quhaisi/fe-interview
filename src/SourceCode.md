@@ -6,3 +6,10 @@
 * [布局](./css/layout)
     * [三栏布局](./css/layout/三栏布局.html)
 </details>
+
+<details>
+<summary>js</summary>
+
+* [数组方法](./js/array)
+    * [reduce](./js/array/reduce.md)
+</details>
