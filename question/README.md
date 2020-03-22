@@ -6,6 +6,7 @@
 + [请说一下数组的reduce方法](/knowledge/js/array/reduce.md)
 + [如何做图片上传预览](/src/js/dom/图片预览.html)
 + [数组去重](/question/数组去重.js)
++ [打印对象o的某个属性为undifined， console.log(o)之后展开能却能看到该属性](/question/对象属性获取问题/README.md)
 
 ## http
 + [你用过POST请求数据的哪些编码格式](/knowledge/http/编码请求主体.md)
