@@ -30,3 +30,8 @@ obj[symboly] = 2
 打印的结果：
 
 ![alt symbol](symbol.jpg)
+
+不过通过`symboly`变量还是可以取出这个值来
+```javascript
+console.log(obj[symboly]) // 2
+```
