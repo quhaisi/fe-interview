@@ -35,3 +35,15 @@ obj[symboly] = 2
 ```javascript
 console.log(obj[symboly]) // 2
 ```
+如果声明方式换成下面这种：
+```javascript
+let obj = {
+  x: 1,
+  [Symbol()]: 2
+}
+```
+这样的对象就拿不到`Symbol`生成的值，不过依然可以有获取的方法。可以使用`Object.getOwnPropertySymbols`方法，获取一个对象中所有的`Symbol`值的一个数组。
+```javascript
+console.log(Object.getOwnPropertySymbols(obj)) // [Symbol()]
+console.log(obj[Object.getOwnPropertySymbols(obj)[0]]) // 2
+```
