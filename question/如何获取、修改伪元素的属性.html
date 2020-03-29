@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Window.getComputedStyle() */
+      .pseudo-element-method1 {
+        width: 200px;
+        height: 100px;
+        background-color: antiquewhite;
+      }
+      .pseudo-element-method1::after {
+        display: block;
+        content: "::after";
+        font-size: 16px;
+        background-color: #ccc;
+      }
+      /* 利用DOM的data-*属性来更改content的值 */
+      .pseudo-element-method2 {
+        width: 200px;
+        height: 100px;
+        background-color: antiquewhite;
+      }
+      .pseudo-element-method2::after {
+        display: block;
+        content: '::after + 'attr(data-name);
+        font-size: 16px;
+        background-color: #ccc;
+      }
+      /* 通过修改class实现修改伪元素 */
+      .pseudo-element-method3 {
+        width: 200px;
+        height: 100px;
+        background-color: antiquewhite;
+      }
+      .pseudo-element-method3::after {
+        display: block;
+        content: '::after';
+        font-size: 16px;
+        background-color: #ccc;
+      }
+      .pseudo-element-method3-1 {
+        width: 200px;
+        height: 100px;
+        background-color: antiquewhite;
+      }
+      .pseudo-element-method3-1::after {
+        display: inline;
+        content: '替换后的::after';
+        font-size: 16px;
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>如何获取、修改伪元素的属性</h1>
+      <hr />
+      <section>
+        <h2>Window.getComputedStyle()</h2>
+        <p>这种方法只能够获取伪元素属性，无法修改。</p>
+        <div class="pseudo-element-method1"></div>
+        <p><button onclick="_getComputedStyle()">getComputedStyle</button></p>
+      </section>
+      <hr />
+      <section>
+        <h2>利用data-*修改content的值</h2>
+        <p>CSS表达式 attr() 用来获取选择到的元素的某一HTML属性值，并用于其样式。它也可以用于伪元素，属性值采用伪元素所依附的元素。</p>
+        <p><i>注意:  attr() 理论上能用于所有的CSS属性但目前支持的仅有伪元素的 content 属性，其他的属性和高级特性目前是实验性的</i></p>
+        <p>由于只有::before和::after有content属性，所以此方法只能在这两个伪元素上使用</p>
+        <div class="pseudo-element-method2" data-name="我是来自主元素中的data的值"></div>
+      </section>
+      <section>
+        <h2>通过修改class实现修改伪元素</h2>
+        <div class="pseudo-element-method3"></div>
+        <p><button onclick="replaceClassName()">replaceClassName</button></p>
+      </section>
+      <section>
+        <h2>利用CSSStyleSheet的insertRule方法来添加样式</h2>
+      </section>
+      <section>
+        <h2>HEAD中添加style标签强制覆盖初始属性</h2>
+      </section>
+    </article>
+    <script>
+      function _getComputedStyle() {
+        let div = document.querySelector(".pseudo-element-methed1");
+        let fontSize = window
+          .getComputedStyle(div, "::before")
+          .getPropertyValue("font-size");
+        alert(fontSize);
+      }
+      function replaceClassName() {
+        let div = document.querySelector(".pseudo-element-method3");
+        div.className = 'pseudo-element-method3-1'
+      }
+    </script>
+  </body>
+</html>
