@@ -1,4 +1,4 @@
-node.js中的模块按引入方式分为三种：
+# node.js中的模块按引入方式分为三种：
 1. [自定义模块](#custom)
 2. [核心模块](#core)
 3. [`node_modules`中的模块](#node_modules)
