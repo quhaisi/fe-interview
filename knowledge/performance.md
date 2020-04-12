@@ -39,3 +39,31 @@
    2. base64
    3. svg
    4. tinypng 图片压缩
+
+3. css与js
+> 前提：浏览器如果渲染页面？
+> 浏览器向服务器请求html文档，然后通过html parse把文档从上到下解析成DOM树，解析过程中如果遇到script、link标签，再去请求相应文件，css请求完毕，生成CSSOM树，再通过合并DOM树生成Render Tree
+   1. html渲染过程的特点
+      1. 顺序执行，并发加载（域名限制 静态资源托管到cdn）
+   2. css阻塞
+      + css head中阻塞页面的渲染
+      + css阻塞js的执行
+      + css不阻塞外部脚本的加载
+   3. js阻塞
+      + 直接引入的js阻塞页面的渲染
+      + js不阻塞资源的加载（webkit有资源预加载的功能）
+      + js顺序执行，阻塞后续js逻辑的执行（async defer）
+
+4. 懒加载与预加载
+   1. 懒加载
+      1. 图片进入可视区域加载图片
+   2. 预加载
+      1. 使用`img`标签，设置`display: none`
+      2. 使用`new Image().src = "https://url"`
+      3. 使用`xhr`请求
+         好处：
+         + 可使用progress进行数据传输监控
+
+         坏处：
+         + 存在跨域问题 
+      4. 使用`preloadJS`
