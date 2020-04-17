@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+      .left {
+        width: 100px;
+        float: left;
+        background-color: #ccc;
+      }
+      .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+        height: 100vh;
+        background-color: #5e5e5e;
+      }
+      .right .ratio-container {
+        position: relative;
+        width: 50%;
+        height: 0;
+        padding-bottom: 25%;
+      }
+      .right .ratio-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+      }
+      .aside {
+        position: fixed;
+        width: 100%;
+        background-color: #fffc;
+        z-index: 10;
+        transform: translateY(-100%);
+        pointer-events: none;
+      }
+      .animated-show {
+        animation: fadeInDown;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+      .animated-hide {
+        animation: fadeOutUp;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+      @-webkit-keyframes fadeInDown {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      @-webkit-keyframes fadeOutUp {
+        from {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+
+        to {
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+
+      @keyframes fadeOutUp {
+        from {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+
+        to {
+          -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+      .aside::after {
+        position: absolute;
+        content: "解题思路";
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fffc;
+        padding: 5px;
+        cursor: pointer;
+        pointer-events: auto; /*设置只能点击伪元素*/
+      }
+    </style>
+  </head>
+  <body>
+    <section class="aside animated fadeInDown">
+      <p>
+        <strong>问题：</strong
+        >实现一个左右布局，左边固定100px，右边可伸缩，高度占满整个屏幕。右侧正中间有个长方形，宽高比2：1，宽是父元素的50%
+      </p>
+      <p>
+        <strong>解题思路：</strong>
+      </p>
+      <ol>
+        <li>左右布局使用float实现,高度设置100vh撑满整个容器；</li>
+        <li>
+          垂直居中使用flex实现，父容器定义display为flex，并设置justify-content:
+          center;align-items: center;；
+        </li>
+        <li>
+          宽高比为2:1使用padding-top、padding-bottom实现，<strong>当设置padding为百分比的时候，相对的是父容器的宽度</strong>；
+        </li>
+        <li>设置好定比例容器后，设置其中子元素绝对定位，并充满整个容器。</li>
+      </ol>
+    </section>
+    <section>
+      <div class="left">
+        left
+      </div>
+      <div class="right">
+        <div class="ratio-container">
+          <div class="ratio-content"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    function calcWH() {
+      let ratioContainer = document.querySelector(".ratio-container"),
+        info = document.querySelector(".ratio-content");
+      info.innerHTML = `<p>宽：${ratioContainer.clientWidth}</p>
+        <p>高：${ratioContainer.clientHeight}</p>
+        <p>宽高比为${
+          ratioContainer.clientWidth / ratioContainer.clientHeight
+        }</p>`;
+    }
+    calcWH();
+    let show = false;
+    document.querySelector(".aside").addEventListener("click", function () {
+      let aside = document.querySelector(".aside").classList;
+      if (!show) {
+        aside.add("animated-show");
+        aside.remove("animated-hide");
+      } else {
+        aside.add("animated-hide");
+        aside.remove("animated-show");
+      }
+      show = !show;
+    });
+    window.addEventListener("resize", calcWH);
+  </script>
+</html>
