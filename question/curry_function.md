@@ -24,7 +24,7 @@ const curry = fn => {
     return (args.length >= length
       ? fn(...args) // 实参个数大于等于形参个数，执行目标函数fn
       : (...args2) => curried(...args.concat(args2))) // 否则返回一个新的函数，
-      // 当该函数执行时会重新调用curried函数再次进行判断，
+      // 当该函数执行时会重新调用curried函数,并对参数进行合并，
       // 直到达成args.length >= length条件
   }
   return curried
