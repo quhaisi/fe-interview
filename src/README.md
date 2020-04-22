@@ -5,8 +5,8 @@
 
 # <span id="js">js</span>
 * [布局](css/layout)</span>
-    * [三栏布局](css/layout/三栏布局.html)
-    * [实现一个左右布局，左边固定100px，右边可伸缩，高度占满整个屏幕。右侧正中间有个长方形，宽高比2：1，宽是父元素的50%](css/layout/question1.html)
+    * [三栏布局](css/layout/css-layout1.html)
+    * [实现一个左右布局，左边固定100px，右边可伸缩，高度占满整个屏幕。右侧正中间有个长方形，宽高比2：1，宽是父元素的50%](css/layout/css-layout2.html)
 
 # <span id="css">css</span>
 * [数组方法](js/array)

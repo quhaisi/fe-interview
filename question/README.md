@@ -1,7 +1,7 @@
 # 面试题
 ## css
-+ [请说一下你知道的三栏布局](../src/css/layout/三栏布局.html)
-+ [垂直水平居中的方式]
++ [请说一下你知道的三栏布局](../src/css/layout/css-layout1.html)
++ [实现一个左右布局，左边固定100px，右边可伸缩，高度占满整个屏幕。右侧正中间有个长方形，宽高比2：1，宽是父元素的50%](../src/css/layout/css-layout2.html)
 
 ## js
 + [请说一下数组的reduce方法](../knowledge/js/array/reduce.md)
@@ -13,15 +13,15 @@
 + [for...in循环遍历数组有什么缺点](../knowledge/js/array/for_in.md)
 + [实现函数curry, 要求完成如下功能](curry_function.md)
   <details>
-  <summary>详细代码</summary>
-  <pre>
-    function add(a, b, c) {
-      return a + b + c
-    }
-    var add2 = curry(add);
-    console.log(add2(1, 2)(3)) // 6
-    console.log(add2(1)(2)(3)) // 6
-  </pre>
+    <summary>详细代码</summary>
+    <pre>
+      function add(a, b, c) {
+        return a + b + c
+      }
+      var add2 = curry(add);
+      console.log(add2(1, 2)(3)) // 6
+      console.log(add2(1)(2)(3)) // 6
+    </pre>
   </details>
 
 ## http
