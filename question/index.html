@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function shuffle(arr) {
+    //   for (let i = arr.length - 1; i > 0; i--) {
+    //     let ran = Math.floor(Math.random() * (i+1));
+    //     [arr[ran], arr[i]] = [arr[i], arr[ran]];
+    //   }
+    //   return arr;
+    // }
+    function shuffle(array) {
+      let i = array.length;
+      while (i > 1) {
+        let random = Math.floor(Math.random() * i);
+        i--;
+        [array[random], array[i]] = [array[i], array[random]];
+      }
+    }
+    test_shuffle(shuffle)
+    function test_shuffle(shuffleFn) {
+      // 多次乱序数组的次数
+      let n = 100000;
+      // 保存每个元素在每个位置上出现的次数
+      let countObj = {
+        a: Array.from({ length: 10 }).fill(0),
+        b: Array.from({ length: 10 }).fill(0),
+        c: Array.from({ length: 10 }).fill(0),
+        d: Array.from({ length: 10 }).fill(0),
+        e: Array.from({ length: 10 }).fill(0),
+        f: Array.from({ length: 10 }).fill(0),
+        g: Array.from({ length: 10 }).fill(0),
+        h: Array.from({ length: 10 }).fill(0),
+        i: Array.from({ length: 10 }).fill(0),
+        j: Array.from({ length: 10 }).fill(0),
+      };
+      for (let i = 0; i < n; i++) {
+        let arr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+        shuffleFn(arr);
+        countObj.a[arr.indexOf("a")]++;
+        countObj.b[arr.indexOf("b")]++;
+        countObj.c[arr.indexOf("c")]++;
+        countObj.d[arr.indexOf("d")]++;
+        countObj.e[arr.indexOf("e")]++;
+        countObj.f[arr.indexOf("f")]++;
+        countObj.g[arr.indexOf("g")]++;
+        countObj.h[arr.indexOf("h")]++;
+        countObj.i[arr.indexOf("i")]++;
+        countObj.j[arr.indexOf("j")]++;
+      }
+      console.table(countObj);
+    }
+  </script>
+</html>
