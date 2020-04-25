@@ -6,12 +6,12 @@
 ## js
 + [请说一下数组的reduce方法](../knowledge/js/array/reduce.md)
 + [如何做图片上传预览](../src/js/dom/图片预览.html)
-+ [数组去重](../question/数组去重.js)
++ [数组去重](.removeDuplicatesFromTheArray.md)
 + [打印对象o的某个属性为undifined， console.log(o)之后展开能却能看到该属性](../question/对象属性获取问题/README.md)
 + [基于Promise实现一个js/css加载器](../question/promise_file_loader)
-+ [如何获取、修改伪元素的属性](../question/获取并修改伪元素的值.html)
++ [如何获取、修改伪元素的属性](../question/如何获取修改伪元素的属性.html)
 + [for...in循环遍历数组有什么缺点](../knowledge/js/array/for_in.md)
-+ [实现函数curry, 要求完成如下功能](curry_function.md)
++ [实现函数curry, 要求完成如下功能](./curry_function.md)
   <details>
     <summary>详细代码</summary>
     <pre>
