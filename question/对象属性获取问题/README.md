@@ -18,7 +18,7 @@ Object.defineProperty(o, 'z', {
 ```
 打印的结果：
 
-![alt definedObject](definedObject.jpg)
+![alt definedObject](./definedObject.jpg)
 
 不过当我回答完之后，面试官说还有其他方法吗？我当时并没有回答上，知道后来无意中看到一个视频，终于知道另一种实现这个中情况的方法——`Symbol`
 利用Symbol生成唯一的值作为键
@@ -29,7 +29,7 @@ obj[symboly] = 2
 ```
 打印的结果：
 
-![alt symbol](symbol.jpg)
+![alt symbol](./symbol.jpg)
 
 不过通过`symboly`变量还是可以取出这个值来
 ```javascript
