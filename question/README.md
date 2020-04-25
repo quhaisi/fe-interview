@@ -6,7 +6,7 @@
 ## js
 + [请说一下数组的reduce方法](../knowledge/js/array/reduce.md)
 + [如何做图片上传预览](../src/js/dom/图片预览.html)
-+ [数组去重](.removeDuplicatesFromTheArray.md)
++ [数组去重](./removeDuplicatesFromTheArray.md)
 + [打印对象o的某个属性为undifined， console.log(o)之后展开能却能看到该属性](../question/对象属性获取问题/README.md)
 + [基于Promise实现一个js/css加载器](../question/promise_file_loader)
 + [如何获取、修改伪元素的属性](../question/如何获取修改伪元素的属性.html)
