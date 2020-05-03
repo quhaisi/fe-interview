@@ -13,4 +13,6 @@
    多路复用允许同时通过单一的 HTTP/2 连接发起多重的请求-响应消息。
    > 在 HTTP/1.1 协议中浏览器客户端在同一时间，针对同一域名下的请求有一定数量限制。超过限制数目的请求会被阻塞。
 
+[HTTP/2 相比 1.0 有哪些重大改进？ - Leo Zhang的回答 - 知乎
+https://www.zhihu.com/question/34074946/answer/75364178](https://www.zhihu.com/question/34074946/answer/75364178)
 TODO HTTPS的原理
