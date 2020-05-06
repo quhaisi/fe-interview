@@ -120,3 +120,27 @@
          2. 快速：针对网页渲染及网络数据访问有较好的优化
          3. 融入：应用可以被增加到手机桌面，并且有全屏和推送等特性
       2. 页面之间通信
+# 缓存
+   1. Cache-Control
+      + max-age
+      + s-maxage
+      + private
+      + public
+      + no-cache
+      + no-store
+   2. Expires
+      + 缓存过期时间
+      + 优先级低于max-age
+   3. Last-Modified/If-Modified-Since
+      + 协商缓存
+      + 更新时间点
+      + 无修改返回304
+      + 缺点：
+        + 服务端可能无法获取精确修改时间
+        + 文件修改时间改了，但文件内容没有改变
+   4. Etag/Uf-None-Match
+      + 文件内容的hash值
+   5. 分级缓存
+      1. 200(from cache) expires/cache-control
+      2. 304 last-modified/etag 下层失效会请求服务器
+      3. 200  本地无缓存或下层失效或强制刷新
