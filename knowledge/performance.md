@@ -144,3 +144,6 @@
       1. 200(from cache) expires/cache-control
       2. 304 last-modified/etag 下层失效会请求服务器
       3. 200  本地无缓存或下层失效或强制刷新
+# 服务端性能优化
+   1. prerender
+   2. ssr
