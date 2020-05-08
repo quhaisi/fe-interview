@@ -23,6 +23,7 @@
       console.log(add2(1)(2)(3)) // 6
     </pre>
   </details>
++ [Promise的实现原理，如果保证状态是不可逆的]
 
 ## http
 + [你用过POST请求数据的哪些编码格式](../knowledge/http/编码请求主体.md)
