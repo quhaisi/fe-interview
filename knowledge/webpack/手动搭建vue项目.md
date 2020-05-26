@@ -1,6 +1,6 @@
 # 手动搭建 vue 项目
 
-## Hello world
+## 1. Hello world
 
 ### 创建目录
 
@@ -99,3 +99,17 @@ export default {
   + "dev": "webpack"
 },
 ```
+
+完成上述配置之后，运行脚本，在浏览器中打开`index.html`就可以看到我们熟悉的`Hello world`了。
+
+## 2. 配置babel
+
+为了让我们在项目中可以使用最新的JS特性，可以引入babel-loader
+
+### 安装babel
+
+```shell
+npm install --save-dev babel-loader @babel/core
+```
+
+### 在webpack中配置babel
