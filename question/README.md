@@ -24,6 +24,8 @@
     </pre>
   </details>
 + [Promise的实现原理，如果保证状态是不可逆的]
++ 链式调用问题
+  + [函数链式调用](./chain_calls.md)
 
 ## http
 + [你用过POST请求数据的哪些编码格式](../knowledge/http/编码请求主体.md)
